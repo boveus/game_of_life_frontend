@@ -47,12 +47,8 @@ td {
 table {
 	margin: 0 auto;
 	border-collapse: collapse;
-	background: black;
+	background: white;
 }
 td {
     width: 40px; height: 40px;
-}
-
-tr:nth-child(odd) td:nth-child(even), tr:nth-child(even) td:nth-child(odd) {
-	background: white;
 }
