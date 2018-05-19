@@ -4,7 +4,10 @@ import Grid from './grid'
 class Main extends Component {
   render () {
     return (
-      <Grid />
+      <div>
+        <h2>  Conways Game of Life </h2>
+        <Grid />
+      </div>
     )
   }
 }
