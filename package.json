@@ -1,7 +1,8 @@
 {
-  "name": "Game of Life",
+  "name": "game_of_life_frontend",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://www.brandonsstewart.com/game_of_life_frontend",
   "dependencies": {
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
