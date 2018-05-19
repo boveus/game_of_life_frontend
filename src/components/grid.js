@@ -7,7 +7,7 @@ class Grid extends Component {
     super(props)
     this.state = {
       highlighted: sampleData[0].row,
-      generation: sampleData[0].generation,
+      generation: 0,
       lastGeneration: sampleData[0].lastGeneration
     }
   }
@@ -48,7 +48,7 @@ class Grid extends Component {
       let nextGen = this.state.generation + 1
       this.setState({
         highlighted: sampleData[nextGen].row,
-        generation: sampleData[nextGen].generation,
+        generation: nextGen,
         lastGeneration: sampleData[nextGen].lastGeneration
       })}
   }
