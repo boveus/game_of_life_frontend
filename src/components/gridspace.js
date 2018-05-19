@@ -10,9 +10,13 @@ class GridSpace extends Component {
   }
 
   handleClick () {
-    if (this.props.highlighted) {
-      document.getElementById(this.props.id).style.background = 'black'
+    if (this.state.highlighted) {
+      this.highlight()
     }
+  }
+
+  highlight () {
+    document.getElementById(this.props.id).style.background = 'black'
   }
 
   render () {

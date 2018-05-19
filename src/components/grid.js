@@ -1,55 +1,86 @@
 import React, { Component } from 'react'
-import GridSpace from './gridspace'
+// import GridSpace from './gridspace'
 
 class Grid extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      highlighted: []
+      highlighted: ['A2', 'A3', 'B4', 'B5', 'H1', 'E3']
     }
+  }
 
-    function animateElements () {
-      let elements = this.state.highlighted
-      resetGrid()
-      for (let i = 0; elements.length > i; i++) {
-        highlight(elements[i])
-      }
-    }
+  componentDidMount () {
+    this.highlightAll()
+  }
 
-    function resetGrid () {
-      let elements = document.getElementsByTagName('td')
-      for (var i = 0; i < elements.length; i++) {
-        if (elements[i].style.background === 'black') {
-          elements[i].style.background = 'white'
-        }
-      }
-    }
+  componentDidUpdate () {
+    this.resetGrid()
+    this.highlightAll()
+  }
 
-    function highlight (gridIndex) {
-      document.getElementById(gridIndex).style.background = 'black'
+  highlightAll () {
+    let elements = this.state.highlighted
+    for (var i = 0; i < elements.length; i++) {
+      this.highlight(elements[i])
     }
+  }
+
+  resetGrid () {
+    let elements = document.getElementsByClassName('gridspace')
+    for (var i = 0; i < elements.length; i++) {
+      elements[i].style.background = 'white'
+    }
+  }
+
+  highlight (id) {
+    document.getElementById(id).style.background = 'black'
   }
 
   render () {
     return (
       <table>
         <tbody>
-          <tr><GridSpace id='A1' highlighted={true} /><td id='A2' /><td id='A3' /><td id='A4' />
-            <td id='A5' /><td id='A6' /><td id='A7' /><td id='A8' /></tr>
-          <tr><td id='B1' /><td id='B2' /><td id='B3' /><td id='B4' />
-            <td id='B5' /><td id='B6' /><td id='B7' /><td id='B8' /></tr>
-          <tr><td id='C1' /><td id='C2' /><td id='C3' /><td id='C4' />
-            <td id='C5' /><td id='C6' /><td id='C7' /><td id='C8' /></tr>
-          <tr><td id='D1' /><td id='D2' /><td id='D3' /><td id='D4' />
-            <td id='D5' /><td id='D6' /><td id='D7' /><td id='D8' /></tr>
-          <tr><td id='E1' /><td id='E2' /><td id='E3' /><td id='E4' />
-            <td id='E5' /><td id='E6' /><td id='E7' /><td id='E8' /></tr>
-          <tr><td id='F1' /><td id='F2' /><td id='F3' /><td id='F4' />
-            <td id='F5' /><td id='F6' /><td id='F7' /><td id='F8' /></tr>
-          <tr><td id='H1' /><td id='H2' /><td id='H3' /><td id='H4' />
-            <td id='H5' /><td id='H6' /><td id='H7' /><td id='H8' /></tr>
-          <tr><td id='I1' /><td id='I2' /><td id='I3' /><td id='I4' />
-            <td id='I5' /><td id='I6' /><td id='I7' /><td id='I8' /></tr>
+          <tr><td className='gridspace' id='A1' /><td className='gridspace' id='A2' />
+            <td className='gridspace' id='A3' /><td className='gridspace' id='A4' />
+            <td className='gridspace' id='A5' /><td className='gridspace' id='A6' />
+            <td className='gridspace' id='A7' /><td className='gridspace' id='A8' />
+          </tr>
+          <tr>
+            <td className='gridspace' id='B1' /><td className='gridspace' id='B2' />
+            <td className='gridspace' id='B3' /><td className='gridspace' id='B4' />
+            <td className='gridspace' id='B5' /><td className='gridspace' id='B6' />
+            <td className='gridspace' id='B7' /><td className='gridspace' id='B8' />
+          </tr>
+          <tr>
+            <td className='gridspace' id='C1' /><td className='gridspace' id='C2' />
+            <td className='gridspace' id='C3' /><td className='gridspace' id='C4' />
+            <td className='gridspace' id='C5' /><td className='gridspace' id='C6' />
+            <td className='gridspace' id='C7' /><td className='gridspace' id='C8' />
+          </tr>
+          <tr>
+            <td className='gridspace' id='D1' /><td className='gridspace' id='D2' />
+            <td className='gridspace' id='D3' /><td className='gridspace' id='D4' />
+            <td className='gridspace' id='D5' /><td className='gridspace' id='D6' />
+            <td className='gridspace' id='D7' /><td className='gridspace' id='D8' />
+          </tr>
+          <tr>
+            <td className='gridspace' id='E1' /><td className='gridspace' id='E2' />
+            <td className='gridspace' id='E3' /><td className='gridspace' id='E4' />
+            <td className='gridspace' id='E5' /><td className='gridspace' id='E6' />
+            <td className='gridspace' id='E7' /><td className='gridspace' id='E8' />
+          </tr>
+          <tr>
+            <td className='gridspace' id='F1' /><td className='gridspace' id='F2' />
+            <td className='gridspace' id='F3' /><td className='gridspace' id='F4' />
+            <td className='gridspace' id='F5' /><td className='gridspace' id='F6' />
+            <td className='gridspace' id='F7' /><td className='gridspace' id='F8' />
+          </tr>
+          <tr>
+            <td className='gridspace' id='H1' /><td className='gridspace' id='H2' />
+            <td className='gridspace' id='H3' /><td className='gridspace' id='H4' />
+            <td className='gridspace' id='H5' /><td className='gridspace' id='H6' />
+            <td className='gridspace' id='H7' /><td className='gridspace' id='H8' />
+          </tr>
         </tbody>
       </table>
     )
