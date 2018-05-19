@@ -76,6 +76,12 @@ class Grid extends Component {
             <td className='gridspace' id='F7' /><td className='gridspace' id='F8' />
           </tr>
           <tr>
+            <td className='gridspace' id='G1' /><td className='gridspace' id='G2' />
+            <td className='gridspace' id='G3' /><td className='gridspace' id='G4' />
+            <td className='gridspace' id='G5' /><td className='gridspace' id='G6' />
+            <td className='gridspace' id='G7' /><td className='gridspace' id='G8' />
+          </tr>
+          <tr>
             <td className='gridspace' id='H1' /><td className='gridspace' id='H2' />
             <td className='gridspace' id='H3' /><td className='gridspace' id='H4' />
             <td className='gridspace' id='H5' /><td className='gridspace' id='H6' />
