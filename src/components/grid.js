@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import GridSpace from './gridspace'
 
 class Grid extends Component {
   constructor (props) {
@@ -6,6 +7,24 @@ class Grid extends Component {
     this.state = {
       highlighted: []
     }
+
+    function animateElements () {
+      let elements = this.state.highlighted
+      resetGrid()
+      for (let i = 0; elements.length > i; i++) {
+        highlight(elements[i])
+      }
+    }
+
+    function resetGrid () {
+      let elements = document.getElementsByTagName('td')
+      for (var i = 0; i < elements.length; i++) {
+        if (elements[i].style.background === 'black') {
+          elements[i].style.background = 'white'
+        }
+      }
+    }
+
     function highlight (gridIndex) {
       document.getElementById(gridIndex).style.background = 'black'
     }
@@ -15,7 +34,7 @@ class Grid extends Component {
     return (
       <table>
         <tbody>
-          <tr><td id='A1' /><td id='A2' /><td id='A3' /><td id='A4' />
+          <tr><GridSpace id='A1' highlighted={true} /><td id='A2' /><td id='A3' /><td id='A4' />
             <td id='A5' /><td id='A6' /><td id='A7' /><td id='A8' /></tr>
           <tr><td id='B1' /><td id='B2' /><td id='B3' /><td id='B4' />
             <td id='B5' /><td id='B6' /><td id='B7' /><td id='B8' /></tr>
